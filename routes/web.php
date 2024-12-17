@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Htpp\Controllers\MailController;
 
 Route::get('/', function () {
     return view('post.create');
@@ -16,5 +17,7 @@ Route::delete('/delete/{id}', [PostController::class , 'delete']);
 Route::post('/edit/{id}', [PostController::class , 'edit']);
 
 Route::post('/update/{id}' ,[ PostController::class , 'update']);
+
+Route::get('/email' , [ MailController::class , 'sendEmail' ]);
 
 
